@@ -254,11 +254,15 @@
 
 # _L_
 
-# menu = ['Манная', 'Гречневая', 'Пшённая', 'Овсянная', 'Рисовая']
+# menu = ['Манная', 'Гречневая', 'Пшённая', 'Овсяная', 'Рисовая']
 # N = int(input())
+# j = 0
 
-# for i in range(N):
-#     print(menu[i])
+# for _ in range(N):
+#     if j == len(menu):
+#         j = 0
+#     print(menu[j])
+#     j += 1
 
 
 
@@ -465,44 +469,48 @@ for every in string:
         stack.append(int(every))
         
     else:
-        # if len(stack) < 2:
-        #     raise ValueError("Недостаточно операндов")
-        if every == '#':
-            stack.append(stack[-1])
-        elif every == '@':
-            stack[-1], stack[-2], stack[-3] = stack[-3], stack[-1], stack[-2]
-        else:
-            if len(stack) >= 2:
+        match every:
+            case '@':
+                if len(stack) < 3:
+                    raise ValueError("В стеке меньше 3 элементов")
+                stack[-3], stack[-2], stack[-1] = stack[-2], stack[-1], stack[-3]
+            case '#':
+                stack.append(stack[-1])
+            case '!':
                 b = stack.pop()
-                a = stack.pop()
-            else:
-                b = stack.pop()
-            match every:
-                case '+':
-                    result = a + b
-                case '-':
-                    result = a - b
-                case '*':
-                    result = a * b
-                case '/':
-                    if b == 0:
-                        raise ValueError("Деление на ноль")
-                    else:
-                        result = a / b
-                case '~':
-                    result = - b
-                case '!':
+                if b < 0:
+                    raise ValueError("b <= 0")
+                elif not isinstance(b, int):
+                    raise ValueError("Число не целое")
+                else:
                     result = 1
                     for i in range(1, b + 1):
                         result *= i
-    
+                    stack.append(result)
+            case '~':
+                b = stack.pop()
+                result = -b
+                stack.append(result)
+            case _:
+                if len(stack) < 2:
+                        raise ValueError("В стеке меньше 2 элементов")
+                b = stack.pop()
+                a = stack.pop()
                 
-            stack.append(result)
-
-# В стеке должен остаться только один элемент - результат
-# if len(stack) != 1:
-#     raise ValueError("Некорректное выражение")
-
+                match every:
+                    case '+':
+                        result = a + b
+                        stack.append(result)
+                    case '-':
+                        result = a - b
+                        stack.append(result)
+                    case '*':
+                        result = a * b
+                        stack.append(result)
+                    case '/':
+                        if b == 0:
+                            raise ValueError("Деление на 0")
+                        stack.append(result := a/b)                        
 print(stack[0])
 
 #____EDITION
