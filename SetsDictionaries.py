@@ -197,17 +197,87 @@
 # _D_
 
 
-mannaya = int(input())
-ovsyanaya = int(input())
-result_1 = set()
-result_2 = set()
+# mannaya = int(input())
+# ovsyanaya = int(input())
+# result_1 = set()
+# result_2 = set()
 
-for _ in range(mannaya):
-    man = str(input())
-    result_1.add(man)
-for _ in range(ovsyanaya):
-    man = str(input())
-    result_2.add(man)
+# for _ in range(mannaya):
+#     man = str(input())
+#     result_1.add(man)
+# for _ in range(ovsyanaya):
+#     man = str(input())
+#     result_2.add(man)
 
-l = len(result_1&result_2)
-print(l if l > 0 else "Таких нет")
+# l = len(result_1&result_2)
+# print(l if l > 0 else "Таких нет")
+
+
+
+
+
+# _E_
+
+# mannaya = int(input())
+# ovsyanaya = int(input())
+# sum = mannaya + ovsyanaya
+# result_1 = set()
+# result_2 = set()
+
+# for _ in range(mannaya):
+#     man = str(input())
+#     result_1.add(man)
+# for _ in range(ovsyanaya):
+#     man = str(input())
+#     result_2.add(man)
+
+
+
+
+
+# _G_
+
+# text = input().split()
+# st = '1asdasd'
+
+# dictionary = {
+#     'A': '.-', 'B': '-...', 'C': '-.-.',
+#     'D': '-..', 'E': '.', 'F': '..-.',
+#     'G': '--.', 'H': '....', 'I': '..',
+#     'J': '.---', 'K': '-.-', 'L': '.-..',
+#     'M': '--', 'N': '-.', 'O': '---',
+#     'P': '.--.', 'Q': '--.-', 'R': '.-.',
+#     'S': '...', 'T': '-', 'U': '..-',
+#     'V': '...-', 'W': '.--', 'X': '-..-',
+#     'Y': '-.--', 'Z': '--..',
+#     '0': '-----', '1': '.----', '2': '..---',
+#     '3': '...--', '4': '....-', '5': '.....',
+#     '6': '-....', '7': '--...', '8': '---..',
+#     '9': '----.'
+# }
+
+# for word in text:
+#     word = word.upper()
+#     for letter in word:
+#         print(dictionary[letter], end=' ')
+#     print()
+
+
+
+# _H_
+
+N = int(input())
+dictionary = dict()
+names = list()
+for _ in range(N):
+    name_kasha = input().split()
+    dictionary[name_kasha[0]] = name_kasha[1]
+
+kasha = input().lower()
+for name, kasha_type in dictionary.items():  
+    if kasha_type == kasha:
+        names.append(name)
+names.sort()
+print('Таких нет' if len(names) == 0 else '\n'.join(names))
+    
+#kasha = input()
