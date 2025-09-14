@@ -266,18 +266,172 @@
 
 # _H_
 
-N = int(input())
-dictionary = dict()
-names = list()
-for _ in range(N):
-    name_kasha = input().split()
-    dictionary[name_kasha[0]] = name_kasha[1]
+# N = int(input())
+# dictionary = dict()
+# names = list()
+# foods = []
+# for _ in range(N):
+#     name, *food = input().lower().split()
+#     names.append(name)
+#     foods.append(food)
+    
+# target_kasha = input().lower()
 
-kasha = input().lower()
-for name, kasha_type in dictionary.items():  
-    if kasha_type == kasha:
-        names.append(name)
-names.sort()
-print('Таких нет' if len(names) == 0 else '\n'.join(names))
+
+
+# kasha = input().lower()
+# for name, kasha_type in dictionary.items():  
+#     if kasha_type == kasha:
+#         names.append(name)
+# names.sort()
+# print('Таких нет' if len(names) == 0 else '\n'.join(names))
     
 #kasha = input()
+
+
+
+
+
+
+# N = int(input())
+# dictionary = dict()
+# names = list()
+# for _ in range(N):
+#     name, *food = input().split()
+#     dictionary[name] = food
+
+# target_food = input().lower()
+# for every in dictionary:
+#     if target_food in dictionary[every]:
+#         names.append(every)
+# names.sort()
+# print('Таких нет' if len(names) == 0 else '\n'.join(names))
+
+
+
+# _I_
+
+# dictionary = {}
+# counter = 1
+
+# while len((lst_of_words := input().split())) != 0:
+#     print(lst_of_words)
+#     for every in lst_of_words:
+#         if every not in dictionary:
+#             dictionary[every] = counter
+#         else:
+#             dictionary[every] += 1
+# for key, value in dictionary.items():
+#         print(key, value)
+
+
+
+
+# translit_dict = {
+#     'А': 'A',    'Б': 'B',    'В': 'V',
+#     'Г': 'G',    'Д': 'D',    'Е': 'E',
+#     'Ё': 'E',    'Ж': 'Zh',   'З': 'Z',
+#     'И': 'I',    'Й': 'I',    'К': 'K',
+#     'Л': 'L',    'М': 'M',    'Н': 'N',
+#     'О': 'O',    'П': 'P',    'Р': 'R',
+#     'С': 'S',    'Т': 'T',    'У': 'U',
+#     'Ф': 'F',    'Х': 'Kh',   'Ц': 'Tc',
+#     'Ч': 'Ch',   'Ш': 'Sh',   'Щ': 'Shch',
+#     'Ы': 'Y',    'Э': 'E',    'Ю': 'Iu',
+#     'Я': 'Ia',   'а': 'a',    'б': 'b',
+#     'в': 'v',    'г': 'g',    'д': 'd',
+#     'е': 'e',    'ё': 'e',    'ж': 'zh',
+#     'з': 'z',    'и': 'i',    'й': 'i',
+#     'к': 'k',    'л': 'l',    'м': 'm',
+#     'н': 'n',    'о': 'o',    'п': 'p',
+#     'р': 'r',    'с': 's',    'т': 't',
+#     'у': 'u',    'ф': 'f',    'х': 'kh',
+#     'ц': 'tc',   'ч': 'ch',   'ш': 'sh',
+#     'щ': 'shch', 'ы': 'y',    'э': 'e',
+#     'ю': 'iu',   'я': 'ia'
+# }
+
+# string = input()
+
+# for every in string:
+#     if every in translit_dict:
+#         print(translit_dict[every], end='')
+#     elif every.lower() == 'ъ' or every.lower() == 'ь':
+#         continue
+#     else:
+#         print(every, end='')
+
+
+
+# _L_
+
+# dictionary = {}
+# counter = 1
+# N = int(input())
+# namesakes = 0
+
+# for _ in range(N):
+#     name = input()
+#     if name not in dictionary:
+#         dictionary[name] = counter
+#     else:
+#         dictionary[name] += 1
+# for every_value in dictionary.values():
+#     if every_value > 1:
+#         namesakes += every_value
+# print(namesakes)
+
+
+# _M_
+
+# _______ КЛЁВЫЙ ВАРИАНТ______
+# dictionary = {}
+# counter = 1
+# key_stack = []
+# for _ in range(N := int(input())):
+#     name = input()
+#     dictionary[name] = dictionary.get(name, 0) + 1
+# items = dictionary.items()
+# new_dictionary = dict(sorted_items := sorted(items))
+
+# flag = True
+# for key, value in new_dictionary.items():
+#     if value > 1:
+#         print(f'{key} - {value}')
+#         flag = False
+# if flag:
+#     print("Однофамильцев нет")
+# # print(items)
+# # print(sorted_items)
+
+# _______МОЕ ИСХОДНОЕ РЕШЕНИЕ________
+# for key in dictionary.keys():
+#     key_stack.append(key)
+# key_stack.sort()
+# flag = True
+# for every in key_stack:
+#     if dictionary[every] > 1:
+#         print(f'{every} - {dictionary[every]}')
+#         flag = False
+# if flag:
+#     print("Однофамильцев нет")
+    
+
+# flag = True
+# for key, value in dictionary.keys():
+#     if value > 1:
+#         print(f'{key} - {value}')
+#         flag = False
+# if flag:
+#     print("Однофамильцев нет")
+# print(dictionary)
+
+
+
+N = int(input())
+M = int(input())
+
+for _ in range(N):
+    dishes = input().split()
+for _ in range(M):
+    
