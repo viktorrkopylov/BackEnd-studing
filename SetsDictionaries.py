@@ -382,7 +382,7 @@
 # print(namesakes)
 
 
-# _M_
+# _L_
 
 # _______ КЛЁВЫЙ ВАРИАНТ______
 # dictionary = {}
@@ -428,10 +428,44 @@
 
 
 
-N = int(input())
-M = int(input())
+# _M_
+
+# N = int(input())    # которые можно приготовить в столовой
+# old_dishes = set()
+# dishes_to_cook = set()
+
+# for _ in range(N):
+#     dishes_to_cook.add(names := input())
+
+# M = int(input())    # имеется информация    
+# for _ in range(M):
+#     block_num = int(input())
+#     for _ in range(block_num): 
+#         old_dishes.add(names := input())
+# sorted_dishes = sorted(dishes_to_cook - old_dishes)
+
+# if len(sorted_dishes) == 0:
+#     print("Готовить нечего")
+# else:
+#     for every in sorted_dishes:
+#         print(every)
+
+
+
+N = int(input())    # которые можно приготовить в столовой
+products = set()
+dictionary = dict()
 
 for _ in range(N):
-    dishes = input().split()
-for _ in range(M):
+    products.add(names := input())
+  
+           # Число рецептов, о которых имеется информация.
+for _ in range(M := int(input()) ):
+    dish = str(input())
+    for _ in range(num_of_ingr := int(input())):
+        ingredient = input()
+        dictionary[dish]
     
+print(dictionary)
+
+        
