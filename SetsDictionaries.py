@@ -452,20 +452,30 @@
 
 
 
-N = int(input())    # которые можно приготовить в столовой
-products = set()
-dictionary = dict()
 
-for _ in range(N):
-    products.add(names := input())
-  
-           # Число рецептов, о которых имеется информация.
-for _ in range(M := int(input()) ):
-    dish = str(input())
-    for _ in range(num_of_ingr := int(input())):
-        ingredient = input()
-        dictionary[dish]
-    
-print(dictionary)
+# _N_
 
+# from collections import defaultdict
+
+# N = int(input())
+# dictionary = defaultdict(set)
+# products = set(input() for _ in range(N))
+
+# for _ in range(M := int(input())):
+#     dish = input()
+#     for _ in range(num_of_ingr := int(input())):
+#         ingredient = input()
+#         dictionary[dish].add(ingredient)
+# result = []
+# for dish, ingredients in dictionary.items():
+#     if products >= ingredients:
+#         result.append(dish)
+# if result:
+#     for dish in sorted(result):
+#         print(dish)
+# else:
+#     print("Готовить нечего")
         
+
+
+
